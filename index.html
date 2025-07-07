@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Siti Zahra Sifa Nginx</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .logo {
+      margin: 20px auto 5px;
+      text-align: center;
+    }
+
+    .logo img {
+      height: 60px;
+      filter: brightness(0.9) drop-shadow(0 0 4px #fff);
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-caption {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 5px;
+    }
+
+    .nginx-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .nginx-info a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 15px 0;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto 40px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .container h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .identitas-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .identitas {
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .foto-ijazah {
+      width: 120px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 12px #00ffe1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .foto-ijazah:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffe1;
+    }
+
+    .quote {
+      margin-top: 25px;
+      font-style: italic;
+      color: #ffff99;
+      min-height: 40px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Musik Latar -->
+  <audio autoplay loop hidden>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Logo Nusaputra -->
+  <div class="logo">
+    <img src="nusput.png" alt="Logo Nusaputra">
+    <div class="logo-caption">Universitas Nusa Putra</div>
+  </div>
+
+  <!-- NGINX Info -->
+  <div class="nginx-info">
+    <h1>🎉 Welcome to Nginx!</h1>
+    <p>You're seeing this page because the Nginx web server has been installed and is working correctly.</p>
+    <p>To configure your server, visit:<br>
+      📘 <a href="https://nginx.org">nginx.org</a><br>
+      🔐 <a href="https://nginx.com">nginx.com</a>
+    </p>
+  </div>
+
+  <!-- Identitas Mahasiswa -->
+  <div class="container">
+    <h3>Identitas Mahasiswa</h3>
+    <div class="identitas-container">
+      <img src="foto.jpg" alt="Foto Mahasiswa" class="foto-ijazah">
+      <div class="identitas">
+        <p><strong>NIM:</strong> 20230040212</p>
+        <p><strong>Nama:</strong> Siti Zahra Sifa</p>
+        <p><strong>Kelas:</strong> TI23F</p>
+        <p><strong>Prodi:</strong> Teknik Informatika</p>
+      </div>
+    </div>
+
+    <div class="quote" id="quote-box">💡 "Jangan takut gagal, karena dari kegagalan kita belajar menjadi lebih baik."</div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>🚀 Thank you for using Nginx. Happy hosting!<br>
+    Universitas Nusa Putra Sukabumi</p>
+  </footer>
+
+  <!-- Script Quotes -->
+  <script>
+    const quotes = [
+      "🌟 \"Pendidikan adalah senjata paling ampuh untuk mengubah dunia.\" – Nelson Mandela",
+      "💡 \"Jangan takut gagal, karena dari kegagalan kita belajar menjadi lebih baik.\"",
+      "📘 \"Teruslah belajar, karena ilmu tidak pernah habis selama kita mau mencari.\"",
+      "🔥 \"Kesuksesan bukan akhir, kegagalan bukan kehancuran. Keberanian untuk terus maju itulah yang penting.\"",
+      "🧠 \"Belajar bukan kewajiban, tapi kunci masa depan.\""
+    ];
+    let index = 1;
+    setInterval(() => {
+      index = (index + 1) % quotes.length;
+      document.getElementById("quote-box").textContent = quotes[index];
+    }, 5000);
+  </script>
+</body>
+</html>
